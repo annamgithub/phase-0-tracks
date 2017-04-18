@@ -1,3 +1,26 @@
 body {
+	background-color: white;
+  color: black;
+  font-family: arial;
+  border: solid;
+  padding: 20px;
+  background-image: url("http://allswalls.com/images/ocean-landscape-wallpaper-8.jpg");
+}
+
+header {
 	background-color: yellow;
+}
+
+footer {
+}
+
+.column-1 {
+	float:left;
+	width:50%;
+  
+}
+
+.column-2 {
+  float: right;
+  width: 50%;
 }
