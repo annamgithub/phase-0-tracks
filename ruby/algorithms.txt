@@ -1,0 +1,25 @@
+Pseudocoded algorithm for a robot using an elevator:
+
+- Walk to elevator
+- Upon arrival, select either the “up” button or the “down” button depending on the following conditions:
+	- If you want to go to a floor that is above your current level, press the “up” button.
+	- Otherwise, press the “down” button.
+- Wait for elevator to arrive.
+- When elevator door opens, enter it.
+- Once inside, press the button that is associated with the floor you want to go to. 
+- Wait for the elevator to take you to  your desired floor.
+- When the door opens, exit.
+
+
+Pseudocoded algorithm for ironing a cloth napkin:
+
+- Set up ironing board.
+- Plug iron into electric socket.
+- Lay cloth napkin flat on ironing board.
+- Once iron is hot, place it over the napkin, starting from the lower left corner.
+- Slide iron across the napkin from the lower left corner to the lower right.
+- Until napkin has slid across the top edge of the napkin, repeat the process below:
+	- Once iron is on the right side, slide it up 10 centimeters, then slide iron across the napkin to the left.
+	- Once iron is on the left side, slide it up 10 centimeters, then slide iron across napkin to the right. 
+- Congratulations, your cloth napkin is now wrinkle-free.
+ 
