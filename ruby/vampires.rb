@@ -42,7 +42,7 @@ until processed_employees == total_employees
 
   if age.to_i == 2017 - birthyear.to_i
     correct_age = true
-  else 
+  elsif (age.to_i > 2017 - birthyear.to_i) || (age.to_i < 2017 - birthyear.to_i)
     correct_age = false
   end
 
