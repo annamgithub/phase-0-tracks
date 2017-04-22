@@ -24,7 +24,7 @@ def encrypt(input_string)
 
 # Print the output-string
 
-  puts output_string
+  p output_string
  end
 
 
@@ -58,12 +58,12 @@ def decrypt(input_string)
 
 # Print the output-string
 
-   puts output_string
+   p output_string
  end
 
 
 # Regarding decrypt(encrypt("swordfish")) :
-# In theory, I understand why calling this nested method call should work. The inner part "encrypt("swordfish")" should yiled a string which should also be valid as a "decrypt" call. I am still receiving an error message, however, despite the fact that all of my code works with the rest of the tests in Release 3.
+# This works because the inner part - "encrypt("swordfish")" - yields a string, which is also valid and further used as a "decrypt" call. 
 
 
 # Release 5: Interface
@@ -75,9 +75,9 @@ puts "What is the password?"
   input_string = gets.chomp
   
 if question == "encrypt"
-  puts encrypt(input_string)
+  encrypt(input_string)
 elsif question == "decrypt"
-  puts decrypt(input_string)
+  decrypt(input_string)
 end
   
   
