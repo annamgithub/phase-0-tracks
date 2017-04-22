@@ -1,3 +1,12 @@
+# Release 5: Interface
+
+puts "Would you like to decrypt or encrypt a password? (decrypt/encrypt)"
+  question = gets.chomp
+
+puts "What is your password?"
+  password = gets.chomp
+
+
 # Part 1, "Encrypt". Pseudocode in comment form:
 # Objective: An encrypt method that advances every letter of a string one letter forward. So "abc" would become "bcd". For now, you can assume lowercase input and output. Any space character should remain a space character -- no change made.
 
@@ -25,8 +34,7 @@ def encrypt(input_string)
 # Print the output-string
 
   puts output_string
-
-end
+ end
 
 
 
@@ -57,13 +65,33 @@ def decrypt(input_string)
     index += 1
   end
 
-  puts output_string
+# Print the output-string
 
+   puts output_string
+ end
+
+
+# Regarding decrypt(encrypt("swordfish")) :
+# In theory, I understand why calling this nested method call should work. The inner part "encrypt("swordfish")" should yiled a string which should also be valid as a "decrypt" call. I am still receiving an error message, however, despite the fact that all of my code works with the rest of the tests in Release 3.
+
+
+# Release 5: Interface
+
+puts "Would you like to decrypt or encrypt a password? (decrypt/encrypt)"
+  question = gets.chomp
+
+puts "What is the password?"
+  input_string = gets.chomp
+  
+if question == "encrypt"
+  puts encrypt(input_string)
+elsif question == "decrypt"
+  puts decrypt(input_string)
 end
-
-
-
-
+  
+  
+  
+  
 
 
 
