@@ -32,4 +32,21 @@ desk = {
     ]
 }
 
+desktopitems = desk[:desktop][:total_item_count]
+penciljar = desk[:desktop_items][0]
+pencilcount = desk[:desktop][:pencil_count_in_jar]
+fountainpen = desk[:drawer_2_items][1]
+
+puts "The desktop has a total of #{desktopitems} items. One of these items is a #{penciljar} containing #{pencilcount} pencils."
+
+puts "When I want to write with a fancy pen, I open my second drawer and take out my #{fountainpen}."
+
+desk[:drawer_2_items].push('bottle of ink')
+ink = desk[:drawer_2_items][2]
+
+puts "When it runs out of ink, I reach into my second drawer for my #{ink}."
+
+
+
+
 
