@@ -16,6 +16,18 @@ swap(full_name)
 vowels = "aeiou"
 consonants = "bcdfghjklmnpqrstvwxyz"
 
+vowel_array = vowels.split("")
+consonants.split("")
+
+vowels.each do |nextvowel|
+  nextvowel = vowel_array.next
+end
+
+p nextvowel
+
+
+
+
 puts "What is your full name?"
   full_name = gets.chomp
 
