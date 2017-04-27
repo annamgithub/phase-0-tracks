@@ -20,6 +20,14 @@ student_name.map! do |name1|
 end
 p student_name
 
+student_name = ["Jim", "Jack", "Joe"]
+p student_name
+student_name.each do |name1|
+  puts name1
+  name1.length
+end
+p student_name
+
 
 student_marks = {
   Jim: 89, 
