@@ -13,8 +13,6 @@ swap(full_name)
 
 # Changing all of the vowels (a, e, i, o, or u) to the next vowel in 'aeiou', and all of the consonants (everything else besides the vowels) to the next consonant in the alphabet.to the next vowel in 'aeiou', and all of the consonants (everything else besides the vowels) to the next consonant in the alphabet. So 'a' would become 'e', 'u' would become 'a', and 'd' would become 'f'.
 
-puts "What is your full name?"
-  full_name = gets.chomp
 
 vowels = "aeiou".split("")
 new_vowel = vowels.map! {|letter| letter.next}
