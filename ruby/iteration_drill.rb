@@ -1,24 +1,65 @@
 # Array Drills
 
-zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
+zombie = ["hatchet", "rations", "water jug", "binoculars",
                               "shotgun", "compass", "CB radio", "batteries"]
 
-# 1. Iterate through the zombie_apocalypse_supplies array,
-# printing each item in the array separated by an asterisk
+# 1. Iterate through the zombie_apocalypse_supplies array, printing each item in the array separated by an asterisk.
+
+zombie.each {|x| print "#{x}*"}
+
 # ----
 
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.
+
+alphabet = "abcdefghijklmnopqrstuvwxyz".split("")
+z = zombie.each {|item| item.split("")}
+
+# def sort(arr)
+#   x = 0
+#   while x < arr.length
+#     y = x + 1 
+#     while y < arr.length
+#       if arr[x] < arr[y]
+#         arr[x], arr[y] = arr[y]
+#       end
+#       y += 1
+#     end
+#     x += 1
+#   end
+#   return arr.reverse.join(' ')
+# end
+
+# sort(zombie)
+
 # ----
 
 # 3. Create a method to see if a particular item (string) is in the
 # zombie_apocalypse_supplies. Do not use any special built-in methods.
 # For instance: are boots in your list of supplies?
+
+def search(starting_array, value)
+  index = 0
+  starting_array.each do |item|
+    return index if item == value
+    index = index + 1
+  end 
+  nil
+end
+
+search(zombie, "boots")
+search(zombie, "rations")
+
+
 # ----
 
 # 4. You can't carry too many things, you've only got room in your pack for 5.
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
 # leaving only 5. Do not use any special built-in methods.
+
+zombie - ["hatchet", "rations", "water jug"]
+
+
 # ----
 
 # 5. You found another survivor! This means you can combine your supplies.
@@ -28,6 +69,14 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 # documentation for Arrays.
 other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
                             "solar battery", "flashlight"]
+
+zombie = ["hatchet", "rations", "water jug", "binoculars", "shotgun", "compass", "CB radio", "batteries"]
+
+combined = other_survivor_supplies | zombie
+
+puts combined
+
+
 # ----
 
 # Hash Drills
@@ -44,6 +93,11 @@ extinct_animals = {
 
 # 1. Iterate through extinct_animals hash, printing each key/value pair
 # with a dash in between the key and value, and an asterisk between each pair.
+
+
+
+
+
 # ----
 
 # 2. Keep only animals in extinct_animals if they were extinct before
