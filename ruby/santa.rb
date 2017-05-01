@@ -1,3 +1,10 @@
+  
+class Santa
+
+  def initialize
+    puts "Initializing Santa instance..."
+  end
+
   def speak
     puts "Ho, ho, ho! Haaaappy holidays!"
   end
@@ -6,13 +13,13 @@
     puts "That was a good #{cookie_type}!"
   end
 
-  def initialize
-    puts "Initializing Santa instance..."
-  end
+
+end
 
 
 # Driver Code
 
-initialize
-speak
-eat_milk_and_cookies("Oreo")
+santa = Santa.new
+santa.speak
+santa.eat_milk_and_cookies("Oreo")
+
