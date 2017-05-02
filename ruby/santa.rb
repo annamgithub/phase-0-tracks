@@ -22,11 +22,6 @@ class Santa
   def celebrate_birthday
     @age += 1
   end
-
-  def get_mad_at(name)
-    reindeer_ranking[name].delete
-    reindeer_ranking[-1].push
-  end
   
   def about
     puts "Gender: #{@gender}"
