@@ -17,9 +17,9 @@ class Puppy
     puts "*rolls over*"
   end
 
-  def dog_years(human_years)
-    dog_years = human_years*7
-    puts "The dog is #{dog_years} in dog years, which is #{human_years} in human_years."
+  def dog_years(years)
+    dog_years = years*7
+    puts "The dog is #{years} years old, which is #{dog_years} in dog years."
   end
 
   def treat
@@ -32,7 +32,7 @@ dog = Puppy.new
 dog.fetch("ball")
 dog.speak(5)
 dog.roll_over
-dog.dog_years(1)
+dog.dog_years(2)
 dog.treat
 
 
