@@ -12,10 +12,26 @@ zombie.each {|x| print "#{x}*"}
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.
 
-alphabet = "abcdefghijklmnopqrstuvwxyz".split("")
-z = zombie.each {|item| item.split("")}
+def alpha(array)
+  n = array.length
 
-# need to ask about this
+  loop do
+    swap = false
+
+    (n-1).times do |index|
+      if array[index] > array[index+1]
+        array[index], array[index+1]=array[index+1], array[index]
+        swap = true
+
+      end
+    end
+    break if not swap
+  end
+  array
+end
+
+zombie = ["hatchet", "rations", "water jug", "binoculars","shotgun", "compass", "CB radio", "batteries"]
+p alpha(zombie)
 
 
 # ----
