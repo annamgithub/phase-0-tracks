@@ -1,21 +1,14 @@
 require_relative 'word_game'
 
-describe Word_Game do
-  let(:word) {Word_Game.new("challenge")}
+  describe Word_Game do
+    let(:word) {Word_Game.new("dog")}
 
-it "prints underscores according to the length of the word" do
-  expect(word.underscore("challenge")).to eq 9 
-end
+  it "prints underscores according to the length of the word" do
+    expect(word.underscore("dog")).to eq 3 
+  end
 
-it "sets number of guesses to the length of the word" do
-  expect(word.guessing("challenge")).to eq 9
-end
-
-it "checks if inputted letter is included in set word" do
-  expect(word.inclusion("c")).to eq true
-end
-
-
-
+  it "sets number of guesses to the length of the word" do
+    expect(word.guessing("dog")).to eq 3
+  end
 
 end

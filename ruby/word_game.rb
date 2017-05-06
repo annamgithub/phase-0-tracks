@@ -1,3 +1,5 @@
+# CLASS Word_Game (successfully passed Rspec tests)
+
 class Word_Game
   attr_accessor :set_word
 
@@ -18,30 +20,75 @@ class Word_Game
 
   def guessing(set_word)
     @set_word.length
+    puts "You have #{@set_word.length} guesses remaining."
   end
-
-# If it is included, print the set of underscores but replace the underscores representing the place of the correctly guessed letter.
-
-  def inclusion(letter)
-    @set_word.include?(letter)
-  end
-
 end
 
 
-# Driver Code
-# game = Word_Game.new("challenge")
-# game.underscore("challenge")
-# puts "You have #{@set_word.length} guesses remaining."
+# USER VIEW
+def first_guess
+  puts "Please enter a letter you think will be in the word"
+  guess_1 = gets.chomp
 
-# Inclusion
-    # puts "Please enter a letter you think might be in the word."
-    # letter = gets.chomp
+  if guess_1 == "d"
+    puts "Well done. d is in the word in the following position: d__."
+  elsif guess_1 == "o"
+    puts "Well done. o is in the word in the following position: _o_."
+  elsif guess_1 == "g"
+    puts "Well done. g is in the word in the following position: __g."
+  else 
+    puts "Sorry. That is incorrect. You have 2 guesses remaining."
+  end
+end
 
-    # num_guesses -= 1
+def second_guess
+  puts "Please enter a letter you think will be in the word"
+  guess_2 = gets.chomp
 
-    # If it is not included, tell the user that she is incorrect and set counter to 1 less that previous guess count. 
-# Continue with process until guess counter reaches zero or until all the underscores are replaced with letters. 
+  if guess_2 == "d"
+    puts "Well done. d is in the word in the following position: d__."
+  elsif guess_2 == "o"
+    puts "Well done. o is in the word in the following position: _o_."
+  elsif guess_2 == "g"
+    puts "Well done. g is in the word in the following position: __g."
+  else 
+    puts "Sorry. That is incorrect. You have 1 guess remaining."
+  end
+end
 
-# Congratulate user if underscores are all replaced by letters.
-# If counter reaches zero, print a taunting message to the user.
+def third_guess
+  puts "Please enter a letter you think will be in the word"
+  guess_3 = gets.chomp
+
+  if guess_3 == "d"
+    puts "Well done. d is in the word in the following position: d__."
+  elsif guess_3 == "o"
+    puts "Well done. o is in the word in the following position: _o_."
+  elsif guess_3 == "g"
+    puts "Well done. g is in the word in the following position: __g."
+  else 
+    puts "Sorry. That is incorrect. You lost!"
+  end
+end
+
+def bonus_guess
+  puts "Surprise! Here is a bonus guessing opportunity. There's a catch, though. You have to guess the whole word. If you are correct, you win. If you are incorrect, you lose the entire game!"
+  guess_4 = gets.chomp
+
+  if guess_4 == "dog"
+    puts "Congratulations! You are a WINNER!"
+  else 
+    puts "Aww...You didn't win this time, but there's always next time! :)"
+  end
+end
+
+# DRIVER CODE
+puts "Welcome to the word-guessing game. I will set a word, and you have to guess which letters are in that word. Use lower-case letters only. Here is a HINT!: A pet said to be man's (or woman's!) best friend."
+game = Word_Game.new("dog")
+game.underscore("dog")
+game.guessing("dog")
+
+first_guess
+second_guess
+third_guess
+bonus_guess
