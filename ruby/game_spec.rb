@@ -19,4 +19,12 @@ require_relative 'word_game'
     expect(word.conceal).to eq "***" 
   end
 
+  it "collect input" do
+    expect(word.input).to eq "d" 
+  end
+
+  it "put user input into letters inputted array" do
+    expect(word.incorrect).to eq "e" 
+  end
+
 end

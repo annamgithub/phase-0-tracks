@@ -1,13 +1,17 @@
+#Class Declaration
+
 class Word_Game
-  attr_reader :set_word, :num_guesses, :letters, :concealed_word, :endgame
-  attr_writer :num_guesses, :concealed_word 
+  attr_reader :set_word, :num_guesses, :letters, :concealed_word, :endgame, :user_input
+  attr_writer :num_guesses, :concealed_word, :user_input
 
   def initialize(set_word)
     @set_word = set_word 
+    #Guesses are limited to twice the number of letters of a set word.
     @num_guesses = set_word.length*2
     @letters = []
     @endgame = false
     @concealed_word = set_word.tr(set_word, "*")
+    @user_input = user_input
   end
 
   def guessing
@@ -26,56 +30,57 @@ class Word_Game
     @concealed_word 
   end
 
+  def input
+    @user_input
+  end
+
+  # def incorrect(user_input)
+  #   letters << user_input
+  # end
+
+  # def end_of_game
+  #   if num_guesses == 0
+  #     @endgame = true 
+  #   elsif @user_input == set_word
+  #     @endgame = true 
+  #   end
+  # end  
+
+  def reveal(user_input)
+    for i in 0..set_word.length-1
+      if set_word[i] == user_input
+        concealed_word[i] == user_input
+        concealed_word
+      end
+    end
+  end
 end
 
 
-
-
-#   def incorrect(inputted_letter)
-#     letters << inputted_letter
-#     letters
-#   end
-
-
-#   def reveal(inputted_letter)
-#     for i in 0..guessing.length-1
-#       if guessing[i] == inputted_letter
-#         concealed_word[i] = letter
-#         concealed_word
-#       end
-#       if guessing[i] == inputted_letter.upcase
-#         concealed_word[i] = inputted_letter.upcase
-#         concealed_word
-#       end
-#     end
-#   concealed_word
-#   end
-
-#   def end_of_game
-#     if num_guesses <= 0
-#       @endgame = true 
-#     elsif concealed_word == set_word
-#       @endgame = true 
-#     else
-#       @endgame
-#     end
-#     @endgame
-#   end
-# end
-
-
-#DRIVER CODE
+#Driver Code
 puts "Let's play a game. I'll enter a word and you'll have to figure out what word it is by guessing each of the letters in the word. You only have as many guesses as twice the number of letters in the word. I'll set a word now...no peeking!"
 set_word = gets.chomp
+
+#One player enters word before the other player takes over.
 
 game = Word_Game.new(set_word)
 
 puts "#{game.num_guesses} guesses remaining. Each star represents a letter. Guess a letter: #{game.concealed_word}."
 user_input = gets.chomp
 
+  if game.set_word.include?user_input == true
+    # puts game.reveal
+    puts "Good guess!"
+
+  elsif game.set_word.include?user_input == false
+    # puts game.reveal
+    puts "Try again."
+    # puts concealed_word
+  end
 
 
 
+# VERSION 1 // ATTEMPT 1 BELOW 
 
 
 # # CLASS Word_Game (successfully passed Rspec tests)
