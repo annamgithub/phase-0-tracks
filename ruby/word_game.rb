@@ -4,10 +4,12 @@ class Word_Game
   attr_reader :set_word, :num_guesses, :letters, :concealed_word, :endgame, :user_input
   attr_writer :num_guesses, :concealed_word, :user_input
 
+#Rspec-tested features below
+
   def initialize(set_word)
     @set_word = set_word 
     #Guesses are limited to twice the number of letters of a set word.
-    @num_guesses = set_word.length*2
+    @num_guesses = set_word.length
     @letters = []
     @endgame = false
     @concealed_word = set_word.tr(set_word, "*")
@@ -58,7 +60,7 @@ end
 
 
 #Driver Code
-puts "Let's play a game. I'll enter a word and you'll have to figure out what word it is by guessing each of the letters in the word. You only have as many guesses as twice the number of letters in the word. I'll set a word now...no peeking!"
+puts "Let's play a game. I'll enter a word and you'll have to figure out what word it is by guessing each of the letters in the word. You only have as many guesses as the number of letters in the word. I'll set a word now...no peeking!"
 set_word = gets.chomp
 
 #One player enters word before the other player takes over.
@@ -68,15 +70,20 @@ game = Word_Game.new(set_word)
 puts "#{game.num_guesses} guesses remaining. Each star represents a letter. Guess a letter: #{game.concealed_word}."
 user_input = gets.chomp
 
-  if game.set_word.include?user_input == true
-    # puts game.reveal
-    puts "Good guess!"
-
-  elsif game.set_word.include?user_input == false
-    # puts game.reveal
-    puts "Try again."
-    # puts concealed_word
+  if game.set_word.include?user_input
+    puts "Congratulations. The letter is in the word. You have #{game.guesses_remaining} guesses remaining. Guess another!"
+    user_input = gets.chomp
+  else
+    puts "Ha! That letter is NOT in the word. Try again. Guess a letter: #{game.concealed_word}."
+    user_input = gets.chomp
   end
+
+  if game.set_word.include?user_input
+    puts "Congratulations. The letter is in the word. You're doing so well - let's just say you won!"
+  else
+    puts "Ha! That letter is NOT in the word. You don't have enough guesses left to win. You have lost!"
+  end
+
 
 
 
