@@ -1,22 +1,25 @@
 class TodoList
 
-attr_reader :list_items
-
-  def initialize(list_items)
-    @list_items = list_items
-  end
-
-  def add(item)
-    @list_items.push(item)
-  end
-
-  def del(item)
-    @list_items.delete(item)
-    @list_items
-  end
-
-  def retrieve(item)
-    @list_items[item]
-  end
-
+def initialize(items)
+  @items = items
 end
+
+def get_items
+  @items
+end
+
+def add_item(item_to_add)
+  @items.push(item_to_add)
+end
+ 
+def delete_item(item_to_delete)
+  @items.delete(item_to_delete)
+end
+
+def get_item(items)
+  @items[items]
+end
+
+end 
+
+
