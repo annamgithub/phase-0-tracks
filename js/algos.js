@@ -24,6 +24,9 @@ phrases(["long phrase","longest phrase","longer phrase", "this is the longest ph
 
 //Release 1 Pseudocode
 // Write a function that takes two objects and checks to see if the objects share at least one key-value pair.
+// Look at each of the items for each of the keys in the hash.
+// If there is a match, return true.
+// Otherwise, return false.
 
 function favorite_food(item1, item2) {
    for (var k1 in item1) {
@@ -43,10 +46,16 @@ favorite_food({name: "Anna", food: "apple pie"}, {name: "Miranda", food: "apple 
 favorite_food({name: "Christa", food: "apple pie"}, {name: "Miranda", food: "Sichuan chicken"}); 
 
 
+//Release 2
 
+// function words(s) {
+//   var array = [];
+//   for(var i = 0; i < s; i++) {
+//     var alpha = "abcdefghijklmnopqrstuvwxyz";
+  
 
-
-
+//Driver Code
+// console.log(array());
 
 
 
