@@ -47,15 +47,18 @@ favorite_food({name: "Christa", food: "apple pie"}, {name: "Miranda", food: "Sic
 
 
 //Release 2
+//Write a function taking an integer as an argument.
+//Create an array for new words, starting off as empty.
+//Create index counter for loop that counts up to value of set integer.
+//Build random word out of alphabet based on inputted length.
 
-// function words(s) {
-//   var array = [];
-//   for(var i = 0; i < s; i++) {
-//     var alpha = "abcdefghijklmnopqrstuvwxyz";
-  
+var randomWord = function(length) {
+    var newWord = [];
+    var alpha = "abcdefghijklmnopqrstuvwxyz";
+    for(var i = 0; i < length; i++) {
+        newWord += alpha.charAt(Math.floor(Math.random() * alpha.length));
+    }
+    return newWord;
+}
 
-//Driver Code
-// console.log(array());
-
-
-
+console.log(randomWord(10));
